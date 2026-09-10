@@ -1,0 +1,135 @@
+{
+  "name": "Mahanthesh S",
+  "brand": "DREAMER",
+  "role": "Software Engineer | Java Backend Developer",
+  "location": "Bengaluru, Karnataka, India",
+  "email": "mahantheshs61@gmail.com",
+  "phone": "+91 7892568479",
+  "summary": "Recent Information Science graduate and Backend Developer specializing in Java and Spring Boot. Experienced in designing and developing scalable RESTful APIs, optimizing database performance, and implementing secure authentication using JWT and Spring Security. Proficient in PostgreSQL and Hibernate/JPA, with exposure to microservices architecture and API performance optimization.",
+  "tagline": "Turning ideas into real-world solutions.",
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/mahanthesh-s-2604b42a2/",
+    "github": "https://github.com/Mahi2708",
+    "portfolio": "https://mahi2708.github.io/Mahantesh-portfolio/"
+  },
+  "skills": {
+    "core": ["Java", "Python", "DSA", "OOP"],
+    "backend": ["Spring Boot", "REST APIs", "Spring Security", "Hibernate/JPA", "JDBC", "JWT Authentication", "Exception Handling", "API Design", "Microservices"],
+    "frontend": ["React", "TypeScript", "HTML", "CSS"],
+    "databases": ["PostgreSQL", "MySQL", "SQL"],
+    "tools": ["Git", "GCP", "VS Code", "Vercel", "Render", "OpenAPI", "Postman", "Power BI", "Figma"],
+    "methodologies": ["Agile", "SDLC", "Manual Testing", "Unit Testing"]
+  },
+  "experience": [
+    {
+      "company": "Mindset IT Solution",
+      "role": "Web Development Intern",
+      "location": "Bengaluru",
+      "period": "Mar 2025 – Jun 2025",
+      "highlights": [
+        "Designed and developed scalable RESTful APIs using Spring Boot following layered architecture.",
+        "Improved DB query efficiency by ~20% using indexing and optimized joins.",
+        "Applied JWT-based authentication and role-based access control.",
+        "Integrated APIs with PostgreSQL using Hibernate/JPA and implemented validation and exception handling.",
+        "Assisted in deployment and testing of backend services on cloud platforms."
+      ],
+      "tech": ["Java", "Spring Boot", "Hibernate/JPA", "REST APIs", "PostgreSQL", "JWT"]
+    },
+    {
+      "company": "Era Foundation Pvt Ltd",
+      "role": "Customer Service Support Intern",
+      "location": "",
+      "period": "",
+      "highlights": [],
+      "tech": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "banking-system",
+      "number": "RACE 001",
+      "title": "Banking System Web Application",
+      "date": "Jun 2024",
+      "category": "Backend + Web Application",
+      "description": "Built a secure banking web application using Spring Boot REST APIs with role-based access, authentication and validation mechanisms for transaction processing.",
+      "impact": [
+        "Reduced API response time by 60% using asynchronous processing and query tuning."
+      ],
+      "tech": ["Java", "Spring Boot", "REST APIs", "SQL", "WebSockets"],
+      "github": "https://github.com/Mahi2708/Banking-System",
+      "live": "https://banking-system-tau-seven.vercel.app/"
+    },
+    {
+      "id": "novel-journey",
+      "number": "RACE 002",
+      "title": "Novel Journey — Novel Reading Platform",
+      "date": "Feb 2026",
+      "category": "Full-Stack Web Application",
+      "description": "A novel reading platform built around a Spring Boot backend and React frontend, with role-based access, secure authentication and workflow-driven content management.",
+      "impact": [
+        "Implemented role-based access control using Spring Security and JWT authentication.",
+        "Optimized database queries using indexing, pagination and custom JPA queries.",
+        "Improved API response time by 30% using caching and query optimization.",
+        "Designed workflow-based systems for chapter requests, approvals and scheduled deletions with transactional consistency.",
+        "Identified and resolved API performance bottlenecks to improve response reliability."
+      ],
+      "tech": ["Spring Boot", "React", "REST API", "Spring Security", "JWT", "PostgreSQL", "JPA/Hibernate"],
+      "github": "https://github.com/Mahi2708",
+      "live": ""
+    },
+    {
+      "id": "blinkit-dashboard",
+      "number": "RACE 003",
+      "title": "Blinkit Dashboard",
+      "date": "Jan 2025",
+      "category": "Data Visualization",
+      "description": "Interactive business dashboard created with Power BI, Power Query and DAX for visual reporting, filtering and insight discovery.",
+      "impact": [
+        "Implemented dynamic filtering and interactive visuals.",
+        "Built efficient reporting using Power Query and DAX."
+      ],
+      "tech": ["Power BI", "Power Query", "DAX"],
+      "github": "https://github.com/Mahi2708/Blinkit-data-anlaysis-using-Power-BI",
+      "live": ""
+    },
+    {
+      "id": "m-ai-l",
+      "number": "RACE 004",
+      "title": "M-ai-L — AI Email Agent",
+      "date": "2025",
+      "category": "AI Agent + Web App",
+      "description": "Full-stack AI email assistant featuring authentication, project and agent management, OpenAI-powered conversations and Gmail integration.",
+      "impact": [
+        "Generated tone-aware email replies using the OpenAI API.",
+        "Integrated Gmail API with OAuth for inbox automation and reply drafting.",
+        "Deployed a React + Express.js + PostgreSQL full-stack application."
+      ],
+      "tech": ["TypeScript", "React", "Express.js", "PostgreSQL", "OpenAI API", "Gmail API", "OAuth"],
+      "github": "https://github.com/Mahi2708/chatbot",
+      "live": "https://chatbot-three-xi-45.vercel.app/"
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.E. Information Science & Engineering",
+      "institution": "BMSIT&M",
+      "period": "2021 – 2025"
+    },
+    {
+      "degree": "PCMB",
+      "institution": "Sharadhambha Independent PU College",
+      "period": "Completed 2021"
+    }
+  ],
+  "certifications": [
+    "Google Cloud Skill Badge – Prompt Design in Vertex AI",
+    "Oracle SQL Certification – SQL Basics",
+    "The SecOps Group – Certified Network Security Practitioner (CNSP)",
+    "Tata – Cybersecurity Analyst Simulation (Forage)"
+  ],
+  "garage": [
+    { "title": "Portfolio 2.0", "status": "BUILDING", "description": "This cinematic developer portfolio." },
+    { "title": "Novel Journey V2", "status": "EXPERIMENTING", "description": "Continued development of the novel reading platform." },
+    { "title": "O-01 Co-Pilot", "status": "BUILDING", "description": "Portfolio-grounded AI assistant." }
+  ]
+}

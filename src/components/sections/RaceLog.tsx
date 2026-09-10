@@ -631,8 +631,8 @@ export function RaceLog() {
 
   const slides = useMemo<Slide[]>(
     () => {
-      const projectSlides =
-        (portfolio.projects as Project[]).map(
+      const projectSlides: Slide[] =
+  (portfolio.projects as Project[]).map(
           (project, index) => {
             /*
              * FIX:

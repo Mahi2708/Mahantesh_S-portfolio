@@ -1,0 +1,312 @@
+/* ============================================================
+   RESPONSIVE LAYOUT FIXES
+   Keep the cinematic styling, but let content breathe on phones.
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* PROJECTS / RACE LOG */
+  .mission-carousel {
+    margin-top: 34px !important;
+  }
+
+  .mission-stage {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .mission-card {
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .mission-card:not(.mission-card-active) {
+    display: none !important;
+  }
+
+  .mission-card-active {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0 !important;
+    overflow: visible !important;
+  }
+
+  .mission-image-frame {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .mission-project-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .mission-card-active > * {
+    min-width: 0 !important;
+  }
+
+  .mission-impact {
+    min-width: 0 !important;
+  }
+
+  .mission-section-label {
+    margin-top: 0 !important;
+  }
+
+  /* Keep carousel controls outside the content flow instead of covering text. */
+  .mission-nav {
+    z-index: 20 !important;
+  }
+
+  /* EXPERIENCE / JOURNEY */
+  .journey-road-header {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 34px !important;
+  }
+
+  .journey-road-distance,
+  .journey-road-year {
+    text-align: left !important;
+  }
+
+  .experience-road {
+    position: relative !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 30px !important;
+    padding: 0 0 10px 34px !important;
+  }
+
+  .experience-road__surface {
+    position: absolute !important;
+    left: 10px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 2px !important;
+    height: auto !important;
+    min-height: 100% !important;
+    opacity: .9 !important;
+  }
+
+  .experience-road__edge {
+    width: 1px !important;
+  }
+
+  .experience-road__edge--right {
+    display: none !important;
+  }
+
+  .experience-road__lane {
+    left: 0 !important;
+    width: 2px !important;
+  }
+
+  .experience-road__progress {
+    left: 0 !important;
+    width: 2px !important;
+  }
+
+  .journey-car {
+    display: none !important;
+  }
+
+  .experience-stops {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .experience-stop,
+  .experience-stop--left,
+  .experience-stop--right {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    transform: none !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .experience-stop__point {
+    position: absolute !important;
+    left: -34px !important;
+    top: 18px !important;
+    z-index: 5 !important;
+  }
+
+  .experience-stop__connector {
+    display: none !important;
+  }
+
+  .experience-card {
+    position: relative !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 22px 18px !important;
+    overflow: visible !important;
+  }
+
+  .experience-card__top {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .experience-card__date small {
+    display: block !important;
+    max-width: 180px !important;
+    line-height: 1.45 !important;
+  }
+
+  .experience-card__sequence {
+    flex: 0 0 auto !important;
+  }
+
+  .experience-card__role {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin: 0 0 14px !important;
+  }
+
+  .experience-card__role h3 {
+    min-width: 0 !important;
+    margin: 0 !important;
+    line-height: 1.05 !important;
+  }
+
+  .experience-card__company {
+    margin-bottom: 20px !important;
+  }
+
+  .experience-card__description {
+    margin: 0 0 20px !important;
+    line-height: 1.65 !important;
+  }
+
+  .experience-card__highlights {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .experience-card__highlights li {
+    display: grid !important;
+    grid-template-columns: 16px minmax(0, 1fr) !important;
+    gap: 7px !important;
+    align-items: start !important;
+    line-height: 1.55 !important;
+  }
+
+  .experience-document {
+    width: 100% !important;
+    margin-top: 22px !important;
+  }
+
+  .journey-route-footer {
+    margin-top: 28px !important;
+  }
+
+  .journey-route-footer p {
+    line-height: 1.6 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-shell {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .section-topline {
+    margin-bottom: 42px !important;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(40px, 12vw, 64px) !important;
+    line-height: .9 !important;
+  }
+
+  .section-description {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  .mission-card-active {
+    border-radius: 8px !important;
+  }
+
+  .mission-image-frame {
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  .experience-road {
+    padding-left: 28px !important;
+  }
+
+  .experience-road__surface {
+    left: 8px !important;
+  }
+
+  .experience-stop__point {
+    left: -28px !important;
+  }
+
+  .experience-card {
+    padding: 18px 15px !important;
+  }
+
+  .experience-card__top {
+    margin-bottom: 16px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .section-shell {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .experience-card {
+    padding: 16px 13px !important;
+  }
+
+  .experience-card__sequence {
+    font-size: 7px !important;
+  }
+}

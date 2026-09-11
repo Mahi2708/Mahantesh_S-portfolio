@@ -1,17 +1,28 @@
 /* ============================================================
    RESPONSIVE LAYOUT FIXES
-   Keep the cinematic styling, but let content breathe on phones.
+   Preserve the original cinematic automotive composition while
+   keeping project content readable on phones.
    ============================================================ */
 
 @media (max-width: 768px) {
-  /* PROJECTS / RACE LOG */
-  .mission-carousel {
-    margin-top: 34px !important;
-  }
+  /* ==========================================================
+     PROJECTS / RACE LOG
+     ========================================================== */
 
   .mission-stage {
+    position: relative !important;
     height: auto !important;
     min-height: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .mission-carousel {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-top: 28px !important;
     overflow: visible !important;
   }
 
@@ -28,6 +39,7 @@
     min-height: 0 !important;
     margin: 0 !important;
     transform: none !important;
+    overflow: visible !important;
   }
 
   .mission-card:not(.mission-card-active) {
@@ -35,18 +47,39 @@
   }
 
   .mission-card-active {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 0 !important;
+    display: block !important;
+    border-radius: 10px !important;
     overflow: visible !important;
+  }
+
+  .mission-card-header,
+  .mission-heading,
+  .mission-project-visual,
+  .mission-bottom {
+    position: relative !important;
+    z-index: 2 !important;
+    min-width: 0 !important;
+  }
+
+  .mission-heading h3 {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    line-height: 1.02 !important;
+  }
+
+  .mission-heading p {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
   }
 
   .mission-image-frame {
     width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
-    aspect-ratio: 16 / 9 !important;
-    margin: 0 !important;
+    aspect-ratio: 16 / 10 !important;
+    margin: 22px 0 0 !important;
     overflow: hidden !important;
   }
 
@@ -57,24 +90,93 @@
     display: block !important;
   }
 
-  .mission-card-active > * {
+  .mission-bottom {
+    display: block !important;
+    padding-bottom: 0 !important;
+  }
+
+  .mission-impact,
+  .mission-stack,
+  .mission-links {
+    position: relative !important;
+    width: 100% !important;
     min-width: 0 !important;
   }
 
   .mission-impact {
-    min-width: 0 !important;
+    margin-top: 28px !important;
   }
 
-  .mission-section-label {
-    margin-top: 0 !important;
+  .mission-stack {
+    margin-top: 26px !important;
   }
 
-  /* Keep carousel controls outside the content flow instead of covering text. */
-  .mission-nav {
-    z-index: 20 !important;
+  .mission-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-top: 24px !important;
+    padding-bottom: 12px !important;
+    z-index: 5 !important;
   }
 
-  /* EXPERIENCE / JOURNEY */
+  .mission-github,
+  .mission-live {
+    position: relative !important;
+    z-index: 6 !important;
+    min-height: 44px !important;
+    flex: 1 1 180px !important;
+  }
+
+  /* The steering wheel belongs BELOW the project card on phones.
+     It must never float over the title, image, stack, or links. */
+  .steering-area {
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: min(280px, 82vw) !important;
+    height: auto !important;
+    min-height: 190px !important;
+    margin: 28px auto 0 !important;
+    padding: 18px 0 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 3 !important;
+    clear: both !important;
+  }
+
+  .steering-wheel {
+    position: relative !important;
+    inset: auto !important;
+    transform: rotate(0deg) !important;
+    flex: 0 0 auto !important;
+  }
+
+  .steering-label {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 4 !important;
+  }
+
+  .steering-label-left {
+    left: -8px !important;
+  }
+
+  .steering-label-right {
+    right: -8px !important;
+  }
+
+  /* ==========================================================
+     EXPERIENCE / JOURNEY
+     Do NOT replace the original road/car composition. The road,
+     destination points and moving car remain the primary UI.
+     ========================================================== */
+
   .journey-road-header {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
@@ -86,156 +188,27 @@
     text-align: left !important;
   }
 
+  /* Keep the original road geometry and animated car intact. */
   .experience-road {
     position: relative !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin-top: 30px !important;
-    padding: 0 0 10px 34px !important;
-  }
-
-  .experience-road__surface {
-    position: absolute !important;
-    left: 10px !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    width: 2px !important;
-    height: auto !important;
-    min-height: 100% !important;
-    opacity: .9 !important;
-  }
-
-  .experience-road__edge {
-    width: 1px !important;
-  }
-
-  .experience-road__edge--right {
-    display: none !important;
-  }
-
-  .experience-road__lane {
-    left: 0 !important;
-    width: 2px !important;
-  }
-
-  .experience-road__progress {
-    left: 0 !important;
-    width: 2px !important;
-  }
-
-  .journey-car {
-    display: none !important;
-  }
-
-  .experience-stops {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 24px !important;
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  .experience-stop,
-  .experience-stop--left,
-  .experience-stop--right {
-    position: relative !important;
-    inset: auto !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-    transform: none !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .experience-stop__point {
-    position: absolute !important;
-    left: -34px !important;
-    top: 18px !important;
-    z-index: 5 !important;
-  }
-
-  .experience-stop__connector {
-    display: none !important;
-  }
-
-  .experience-card {
-    position: relative !important;
-    width: 100% !important;
-    max-width: none !important;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 22px 18px !important;
     overflow: visible !important;
   }
 
-  .experience-card__top {
-    display: flex !important;
-    align-items: flex-start !important;
-    justify-content: space-between !important;
-    gap: 12px !important;
-    margin-bottom: 20px !important;
+  .experience-stops {
+    position: relative !important;
   }
 
-  .experience-card__date small {
-    display: block !important;
-    max-width: 180px !important;
-    line-height: 1.45 !important;
+  .experience-stop {
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important;
   }
 
-  .experience-card__sequence {
-    flex: 0 0 auto !important;
+  .experience-stop__point {
+    z-index: 12 !important;
   }
 
-  .experience-card__role {
-    display: flex !important;
-    align-items: flex-start !important;
-    gap: 8px !important;
-    margin: 0 0 14px !important;
-  }
-
-  .experience-card__role h3 {
-    min-width: 0 !important;
-    margin: 0 !important;
-    line-height: 1.05 !important;
-  }
-
-  .experience-card__company {
-    margin-bottom: 20px !important;
-  }
-
-  .experience-card__description {
-    margin: 0 0 20px !important;
-    line-height: 1.65 !important;
-  }
-
-  .experience-card__highlights {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .experience-card__highlights li {
-    display: grid !important;
-    grid-template-columns: 16px minmax(0, 1fr) !important;
-    gap: 7px !important;
-    align-items: start !important;
-    line-height: 1.55 !important;
-  }
-
-  .experience-document {
-    width: 100% !important;
-    margin-top: 22px !important;
+  .experience-card {
+    z-index: 4 !important;
   }
 
   .journey-route-footer {
@@ -267,32 +240,29 @@
     line-height: 1.6 !important;
   }
 
-  .mission-card-active {
-    border-radius: 8px !important;
+  .mission-heading h3 {
+    font-size: clamp(34px, 9.5vw, 58px) !important;
+    line-height: .98 !important;
   }
 
   .mission-image-frame {
     aspect-ratio: 16 / 10 !important;
   }
 
-  .experience-road {
-    padding-left: 28px !important;
+  .mission-links {
+    flex-direction: column !important;
   }
 
-  .experience-road__surface {
-    left: 8px !important;
+  .mission-github,
+  .mission-live {
+    width: 100% !important;
+    flex-basis: auto !important;
   }
 
-  .experience-stop__point {
-    left: -28px !important;
-  }
-
-  .experience-card {
-    padding: 18px 15px !important;
-  }
-
-  .experience-card__top {
-    margin-bottom: 16px !important;
+  .steering-area {
+    width: min(260px, 84vw) !important;
+    min-height: 175px !important;
+    margin-top: 24px !important;
   }
 }
 
@@ -302,11 +272,12 @@
     padding-right: 16px !important;
   }
 
-  .experience-card {
-    padding: 16px 13px !important;
+  .mission-heading h3 {
+    font-size: clamp(31px, 9.5vw, 44px) !important;
   }
 
-  .experience-card__sequence {
-    font-size: 7px !important;
+  .steering-area {
+    width: min(240px, 86vw) !important;
+    min-height: 160px !important;
   }
 }

@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://mahantesh-s-portfolio.onrender.com/api/:path*"
+    }
+  ]
+}

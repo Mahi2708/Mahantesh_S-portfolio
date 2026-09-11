@@ -1,0 +1,366 @@
+/* ============================================================
+   O-01 AI CO-PILOT
+   Responsive / device-safe layout overrides
+   ============================================================ */
+
+.o01-root {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  z-index: 2147483640 !important;
+  pointer-events: none !important;
+  isolation: isolate !important;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.o01-root,
+.o01-root * {
+  box-sizing: border-box;
+}
+
+/* Launcher */
+.o01-root .o01-floating {
+  position: fixed !important;
+  right: clamp(12px, 2.2vw, 32px) !important;
+  bottom: max(12px, env(safe-area-inset-bottom)) !important;
+  width: clamp(58px, 5vw, 76px) !important;
+  height: clamp(58px, 5vw, 76px) !important;
+  min-width: 58px !important;
+  min-height: 58px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid rgba(77, 163, 255, .65) !important;
+  border-radius: 50% !important;
+  background: rgba(8, 9, 11, .97) !important;
+  color: #f2f2f0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent !important;
+  z-index: 2147483647 !important;
+}
+
+.o01-root .o01-floating:hover {
+  transform: translateY(-3px) !important;
+}
+
+.o01-root .o01-floating:active {
+  transform: scale(.96) !important;
+}
+
+.o01-floating-label {
+  pointer-events: none !important;
+}
+
+/* Chat window — intentionally uses viewport units so it works on phones,
+   tablets, laptops, ultrawide monitors and browser zoom. */
+.o01-root .o01-chat-panel {
+  position: fixed !important;
+  top: auto !important;
+  left: auto !important;
+  right: clamp(8px, 2vw, 30px) !important;
+  bottom: max(8px, env(safe-area-inset-bottom)) !important;
+  width: min(430px, calc(100vw - 16px)) !important;
+  height: min(680px, calc(100dvh - 16px)) !important;
+  max-width: calc(100vw - 16px) !important;
+  max-height: calc(100dvh - 16px) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  overflow: hidden !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  clip: auto !important;
+  clip-path: none !important;
+  pointer-events: auto !important;
+  z-index: 2147483647 !important;
+  isolation: isolate !important;
+  border: 1px solid rgba(77, 163, 255, .42) !important;
+  border-radius: clamp(10px, 1.2vw, 18px) !important;
+  background: #08090b !important;
+  color: #f2f2f0 !important;
+  box-shadow: 0 24px 80px rgba(0,0,0,.72), 0 0 40px rgba(77,163,255,.14) !important;
+}
+
+/* Header */
+.o01-root .o01-header {
+  flex: 0 0 auto !important;
+  min-height: 70px !important;
+  padding: clamp(10px, 1.5vw, 18px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  overflow: hidden !important;
+}
+
+.o01-root .o01-header-left {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+.o01-root .o01-header-left > div:last-child {
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.o01-root .o01-header h2,
+.o01-root .o01-header p {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.o01-root .o01-close {
+  flex: 0 0 auto !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+}
+
+/* Messages */
+.o01-root .o01-communication-log {
+  flex: 1 1 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  scrollbar-width: thin !important;
+}
+
+.o01-root .o01-message {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.o01-root .o01-message-bubble {
+  min-width: 0 !important;
+  max-width: min(82%, 340px) !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+/* Quick actions */
+.o01-root .o01-quick-actions {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  max-height: 170px !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.o01-root .o01-actions-grid {
+  min-width: 0 !important;
+}
+
+.o01-root .o01-action {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Input */
+.o01-root .o01-input-area {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+}
+
+.o01-root .o01-input-form {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.o01-root .o01-input-form input {
+  width: 1px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+.o01-root .o01-input-form button {
+  flex: 0 0 auto !important;
+}
+
+/* Footer */
+.o01-root .o01-chat-footer {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  gap: 10px !important;
+}
+
+.o01-root .o01-chat-footer span,
+.o01-root .o01-chat-footer button {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .o01-root .o01-chat-panel {
+    width: min(420px, calc(100vw - 20px)) !important;
+    height: min(650px, calc(100dvh - 20px)) !important;
+    right: 10px !important;
+    bottom: max(10px, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .o01-root .o01-floating {
+    right: 14px !important;
+    bottom: max(14px, env(safe-area-inset-bottom)) !important;
+    width: 62px !important;
+    height: 62px !important;
+  }
+
+  .o01-root .o01-chat-panel {
+    top: max(8px, env(safe-area-inset-top)) !important;
+    right: 8px !important;
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    left: 8px !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    border-radius: 12px !important;
+  }
+
+  .o01-root .o01-header {
+    min-height: 64px !important;
+    padding: 10px 12px !important;
+  }
+
+  .o01-root .o01-hologram {
+    width: 44px !important;
+    height: 44px !important;
+    flex-basis: 44px !important;
+    transform: scale(.86) !important;
+  }
+
+  .o01-root .o01-header h2 {
+    font-size: 13px !important;
+  }
+
+  .o01-root .o01-header p,
+  .o01-root .o01-eyebrow {
+    font-size: 8px !important;
+  }
+
+  .o01-root .o01-status-bar {
+    padding: 7px 12px !important;
+  }
+
+  .o01-root .o01-communication-log {
+    padding: 12px !important;
+  }
+
+  .o01-root .o01-message-bubble {
+    max-width: 88% !important;
+    font-size: 12px !important;
+  }
+
+  .o01-root .o01-quick-actions {
+    max-height: 132px !important;
+    padding: 8px 12px !important;
+  }
+
+  .o01-root .o01-actions-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 5px !important;
+  }
+
+  .o01-root .o01-action {
+    padding: 7px 6px !important;
+    font-size: 8px !important;
+  }
+
+  .o01-root .o01-input-area {
+    padding: 8px 12px !important;
+  }
+
+  .o01-root .o01-input-form input {
+    font-size: 12px !important;
+  }
+
+  .o01-root .o01-input-form button {
+    padding: 8px 9px !important;
+  }
+
+  .o01-root .o01-chat-footer {
+    padding: 7px 12px !important;
+    font-size: 7px !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .o01-root .o01-actions-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .o01-root .o01-quick-actions {
+    max-height: 145px !important;
+  }
+
+  .o01-root .o01-message-bubble {
+    max-width: 84% !important;
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 520px) and (orientation: landscape) {
+  .o01-root .o01-chat-panel {
+    top: 6px !important;
+    bottom: 6px !important;
+  }
+
+  .o01-root .o01-header {
+    min-height: 54px !important;
+    padding: 7px 10px !important;
+  }
+
+  .o01-root .o01-hologram {
+    transform: scale(.7) !important;
+  }
+
+  .o01-root .o01-quick-actions {
+    max-height: 90px !important;
+  }
+}
+
+/* Desktop / ultrawide */
+@media (min-width: 1400px) {
+  .o01-root .o01-chat-panel {
+    width: min(450px, 30vw) !important;
+    height: min(700px, 82dvh) !important;
+  }
+}
+
+/* Accessibility / reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .o01-root .o01-floating,
+  .o01-root .o01-action,
+  .o01-root .o01-message-bubble {
+    transition: none !important;
+    animation: none !important;
+  }
+}

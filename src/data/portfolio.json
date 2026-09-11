@@ -131,5 +131,71 @@
     { "title": "Portfolio 2.0", "status": "BUILDING", "description": "This cinematic developer portfolio." },
     { "title": "Novel Journey V2", "status": "EXPERIMENTING", "description": "Continued development of the novel reading platform." },
     { "title": "O-01 Co-Pilot", "status": "BUILDING", "description": "Portfolio-grounded AI assistant." }
-  ]
+  ],
+  "copilot": {
+    "pitCommands": [
+      {
+        "id": "profile",
+        "label": "PROFILE",
+        "icon": "profile",
+        "heading": "DRIVER PROFILE",
+        "subheading": "MAHANTHESH S // SOFTWARE ENGINEER",
+        "content": [
+          "Recent Information Science graduate and Backend Developer specializing in Java and Spring Boot. Experienced in designing and developing scalable RESTful APIs, optimizing database performance, and implementing secure authentication using JWT and Spring Security. Proficient in PostgreSQL and Hibernate/JPA, with exposure to microservices architecture and API performance optimization.",
+          "Primary focus: Java, Spring Boot, REST APIs, secure backend systems and PostgreSQL."
+        ]
+      },
+      {
+        "id": "projects",
+        "label": "PROJECTS",
+        "icon": "projects",
+        "heading": "RACE LOG // PROJECTS",
+        "subheading": "SELECTED BUILDS",
+        "content": [
+          { "title": "Banking System Web Application", "meta": "Jun 2024 // Backend + Web Application", "description": "Built a secure banking web application using Spring Boot REST APIs with role-based access, authentication and validation mechanisms for transaction processing.", "tech": ["Java", "Spring Boot", "REST APIs", "SQL", "WebSockets"], "impact": ["Reduced API response time by 60% using asynchronous processing and query tuning."] },
+          { "title": "Novel Journey — Novel Reading Platform", "meta": "Feb 2026 // Full-Stack Web Application", "description": "A novel reading platform built around a Spring Boot backend and React frontend, with role-based access, secure authentication and workflow-driven content management.", "tech": ["Spring Boot", "React", "REST API", "Spring Security", "JWT", "PostgreSQL", "JPA/Hibernate"], "impact": ["Implemented role-based access control using Spring Security and JWT authentication.", "Optimized database queries using indexing, pagination and custom JPA queries.", "Improved API response time by 30% using caching and query optimization.", "Designed workflow-based systems for chapter requests, approvals and scheduled deletions with transactional consistency.", "Identified and resolved API performance bottlenecks to improve response reliability."] },
+          { "title": "Blinkit Dashboard", "meta": "Jan 2025 // Data Visualization", "description": "Interactive business dashboard created with Power BI, Power Query and DAX for visual reporting, filtering and insight discovery.", "tech": ["Power BI", "Power Query", "DAX"], "impact": ["Implemented dynamic filtering and interactive visuals.", "Built efficient reporting using Power Query and DAX."] },
+          { "title": "M-ai-L — AI Email Agent", "meta": "2025 // AI Agent + Web App", "description": "Full-stack AI email assistant featuring authentication, project and agent management, OpenAI-powered conversations and Gmail integration.", "tech": ["TypeScript", "React", "Express.js", "PostgreSQL", "OpenAI API", "Gmail API", "OAuth"], "impact": ["Generated tone-aware email replies using the OpenAI API.", "Integrated Gmail API with OAuth for inbox automation and reply drafting.", "Deployed a React + Express.js + PostgreSQL full-stack application."] }
+        ]
+      },
+      {
+        "id": "experience",
+        "label": "EXPERIENCE",
+        "icon": "experience",
+        "heading": "DRIVER EXPERIENCE",
+        "subheading": "ENGINEERING & PROFESSIONAL TRACK",
+        "content": [
+          { "title": "Web Development Intern", "meta": "Mindset IT Solution // Mar 2025 – Jun 2025", "description": ["Designed and developed scalable RESTful APIs using Spring Boot following layered architecture.", "Improved DB query efficiency by ~20% using indexing and optimized joins.", "Applied JWT-based authentication and role-based access control.", "Integrated APIs with PostgreSQL using Hibernate/JPA and implemented validation and exception handling.", "Assisted in deployment and testing of backend services on cloud platforms."], "tech": ["Java", "Spring Boot", "Hibernate/JPA", "REST APIs", "PostgreSQL", "JWT"] },
+          { "title": "Customer Service Support Intern", "meta": "Era Foundation Pvt Ltd", "description": [], "tech": [] }
+        ]
+      },
+      {
+        "id": "certifications",
+        "label": "CERTIFICATIONS",
+        "icon": "certifications",
+        "heading": "CERTIFICATION GRID",
+        "subheading": "VERIFIED LEARNING MILESTONES",
+        "content": [
+          "Google Cloud Skill Badge – Prompt Design in Vertex AI",
+          "Oracle SQL Certification – SQL Basics",
+          "The SecOps Group – Certified Network Security Practitioner (CNSP)",
+          "Tata – Cybersecurity Analyst Simulation (Forage)"
+        ]
+      },
+      {
+        "id": "contact",
+        "label": "CONTACT",
+        "icon": "contact",
+        "heading": "NEXT DESTINATION",
+        "subheading": "CONNECT WITH MAHANTHESH",
+        "content": [
+          { "label": "EMAIL", "value": "mahantheshs61@gmail.com" },
+          { "label": "PHONE", "value": "+91 7892568479" },
+          { "label": "LINKEDIN", "value": "https://www.linkedin.com/in/mahanthesh-s-2604b42a2/" },
+          { "label": "GITHUB", "value": "https://github.com/Mahi2708" },
+          { "label": "PORTFOLIO", "value": "https://mahi2708.github.io/Mahantesh-portfolio/" }
+        ]
+      }
+    ]
+  }
 }

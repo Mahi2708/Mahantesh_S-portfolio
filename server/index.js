@@ -242,12 +242,14 @@ ${JSON.stringify(portfolio, null, 2)}
 
         body: JSON.stringify({
           /*
-            You can change this model later.
+            OpenRouter's free router automatically selects an
+            available compatible free model. Set OPENROUTER_MODEL
+            in the environment only if you want to pin a specific model.
           */
 
           model:
             process.env.OPENROUTER_MODEL ||
-            "openai/gpt-3.5-turbo",
+            "openrouter/free",
 
           messages: [
             {

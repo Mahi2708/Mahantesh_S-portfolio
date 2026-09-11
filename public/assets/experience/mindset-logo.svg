@@ -1,3 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 579">
-<image href="data:image/png;base64,PLACEHOLDER" width="700" height="579" preserveAspectRatio="xMidYMid meet"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180">
+  <rect width="520" height="180" fill="white" fill-opacity="0"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="260" y="82" text-anchor="middle" font-size="68" font-weight="700" fill="#0b5a91">mindset</text>
+    <text x="260" y="120" text-anchor="middle" font-size="20" font-weight="700" letter-spacing="2.5" fill="#171717">IT SOLUTIONS &amp; CONSULTANTS</text>
+  </g>
 </svg>

@@ -203,10 +203,14 @@ export function Journey() {
                   isActive ? 'is-active' : '',
                   isPassed ? 'is-passed' : '',
                 ].join(' ')}
+                tabIndex={0}
                 onMouseEnter={() =>
                   setActiveExperience(experience.id)
                 }
                 onFocus={() =>
+                  setActiveExperience(experience.id)
+                }
+                onClick={() =>
                   setActiveExperience(experience.id)
                 }
               >
@@ -285,11 +289,12 @@ export function Journey() {
                       className="experience-document"
                       title={`View ${experience.document.label}`}
                       aria-label={`View ${experience.document.label}`}
-                      onClick={() =>
+                      onClick={(event) => {
+                        event.stopPropagation();
                         setSelectedDocument(
                           experience.document ?? null,
-                        )
-                      }
+                        );
+                      }}
                     >
                       <span className="experience-document__icon">
                         <span />
@@ -330,7 +335,7 @@ export function Journey() {
         </div>
 
         <p>
-          Hover over each experience stop to move the car through
+          Hover or tap each experience stop to move the car through
           the route. Select the document icon to inspect available
           internship evidence.
         </p>

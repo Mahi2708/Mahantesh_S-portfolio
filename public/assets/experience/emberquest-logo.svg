@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360">
+  <rect width="420" height="360" fill="white" fill-opacity="0"/>
+  <circle cx="210" cy="125" r="86" fill="none" stroke="#111" stroke-width="5"/>
+  <circle cx="210" cy="125" r="79" fill="none" stroke="#555" stroke-width="2"/>
+  <path d="M210 67 C178 99 179 118 191 132 C177 128 166 141 169 158 C173 184 197 199 220 192 C244 185 257 164 249 142 C246 132 238 123 229 117 C231 135 219 144 213 148 C217 127 206 105 210 67 Z" fill="#111"/>
+  <text x="210" y="257" text-anchor="middle" font-family="Georgia, serif" font-size="39" font-weight="700" fill="#111">EMBERQUEST</text>
+  <text x="210" y="284" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="600" fill="#111">Achieving Excellence Together</text>
+</svg>

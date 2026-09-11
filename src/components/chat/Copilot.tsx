@@ -6,34 +6,67 @@ const COPILOT_API_URL = (import.meta.env.VITE_COPILOT_API_URL || "").replace(/\/
 const COPILOT_ENDPOINT = COPILOT_API_URL ? `${COPILOT_API_URL}/api/copilot` : "/api/copilot";
 
 type Message = { id: number; role: "user" | "assistant"; content: string };
+type CommandIcon = "chat" | "code" | "resume" | "idea" | "career" | "tech" | "goal";
 
-const quickActions = [
-  "Tell me about Mahanthesh",
-  "What are his skills?",
-  "Show me his projects",
-  "Tell me about his experience",
+const quickActions: { label: string; prompt: string; icon: CommandIcon }[] = [
+  { label: "General Chat", prompt: "Tell me about Mahanthesh", icon: "chat" },
+  { label: "Code Help", prompt: "What are Mahanthesh's technical skills?", icon: "code" },
+  { label: "Resume Review", prompt: "Give me a concise overview of Mahanthesh's resume", icon: "resume" },
+  { label: "Project Ideas", prompt: "Show me Mahanthesh's projects", icon: "idea" },
+  { label: "Career Guidance", prompt: "Tell me about Mahanthesh's experience", icon: "career" },
+  { label: "Tech Explain", prompt: "Explain Mahanthesh's main backend technologies", icon: "tech" },
+  { label: "Goal Planner", prompt: "What kind of software engineering role fits Mahanthesh?", icon: "goal" },
 ];
 
-function AccelerationIcon() {
+function CommandIcon({ type }: { type: CommandIcon }) {
+  const common = { fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
   return (
-    <svg className="o01-acceleration-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M5 19h14M7 17l3-10h4l3 10M9 14h6" />
-      <path d="M12 3v5M9.5 5.5 12 3l2.5 2.5" />
+    <svg viewBox="0 0 32 32" aria-hidden="true" className="o01-command-svg">
+      {type === "chat" && <><path {...common} d="M7 8h18v12H14l-6 5v-5H7z" /><path {...common} d="M12 13h8M12 17h5" /></>}
+      {type === "code" && <><path {...common} d="m12 10-6 6 6 6M20 10l6 6-6 6M18 7l-4 18" /></>}
+      {type === "resume" && <><path {...common} d="M9 5h10l4 4v18H9z" /><path {...common} d="M19 5v5h5M13 15h7M13 19h7M13 23h5" /></>}
+      {type === "idea" && <><path {...common} d="M16 5a8 8 0 0 0-5 14c1 .8 2 2 2 4h6c0-2 .9-3.2 2-4A8 8 0 0 0 16 5z" /><path {...common} d="M13 27h6M14 30h4M16 2v-1M5 6 4 5M27 6l1-1" /></>}
+      {type === "career" && <><path {...common} d="M6 11h20v15H6zM11 11V8h10v3M10 17h12M16 14v6" /></>}
+      {type === "tech" && <><circle {...common} cx="16" cy="16" r="4" /><path {...common} d="M16 3v5M16 24v5M3 16h5M24 16h5M7 7l4 4M21 21l4 4M25 7l-4 4M11 21l-4 4" /></>}
+      {type === "goal" && <><circle {...common} cx="16" cy="16" r="10" /><circle {...common} cx="16" cy="16" r="5" /><circle cx="16" cy="16" r="1.7" fill="currentColor" /><path {...common} d="m22 10 6-6M23 4h5v5" /></>}
     </svg>
   );
 }
 
-function CopilotIcon() {
+function AccelerationPedalIcon() {
   return (
-    <div className="o01-launcher-icon" aria-hidden="true">
-      <div className="o01-launcher-ring" />
-      <div className="o01-mini-robot-head"><i /><i /></div>
-      <div className="o01-mini-robot-chest"><b /></div>
+    <svg className="o01-acceleration-icon" viewBox="0 0 48 56" aria-hidden="true">
+      <path d="M10 49h28" />
+      <path d="M16 43V15c0-4 3-7 7-7h4c4 0 6 3 6 7v28" />
+      <path d="M18 18h12M18 26h12M18 34h12" />
+      <path d="M24 2v6" />
+      <path d="m20 5 4-3 4 3" />
+    </svg>
+  );
+}
+
+function RobotAvatar({ small = false }: { small?: boolean }) {
+  return (
+    <div className={`o01-avatar o01-robot-avatar${small ? " small" : ""}`} aria-hidden="true">
+      <div className="o01-avatar-halo" />
+      <div className="o01-robot-helmet"><i /><i /></div>
+      <div className="o01-robot-face" />
+      <div className="o01-robot-armor"><b /></div>
     </div>
   );
 }
 
-/* Original armored O-01 hologram: angular red/blue robot styling inspired by classic transforming-robot silhouettes, not a replica asset. */
+function DriverAvatar({ small = false }: { small?: boolean }) {
+  return (
+    <div className={`o01-avatar o01-driver-avatar${small ? " small" : ""}`} aria-hidden="true">
+      <div className="o01-driver-glow" />
+      <div className="o01-driver-head"><i /><i /></div>
+      <div className="o01-driver-hair" />
+      <div className="o01-driver-body"><b /></div>
+    </div>
+  );
+}
+
 function HologramRobot() {
   return (
     <div className="o01-hologram" aria-hidden="true">
@@ -128,7 +161,7 @@ export function Copilot() {
     <div className="o01-root">
       {!isOpen && (
         <button type="button" className="o01-floating" onClick={() => setIsOpen(true)} aria-label="Open O-01 AI Co-Pilot">
-          <CopilotIcon />
+          <RobotAvatar small />
           <span className="o01-floating-label">O-01</span>
           <span className="o01-floating-pulse" />
         </button>
@@ -157,24 +190,31 @@ export function Copilot() {
           <section className="o01-communication-log">
             {messages.map((message) => (
               <div key={message.id} className={`o01-message ${message.role}`}>
-                <div className="o01-message-avatar">{message.role === "user" ? "DRIVER" : "O-01"}</div>
-                <div className="o01-message-bubble">{message.content}</div>
+                {message.role === "user" ? <DriverAvatar small /> : <RobotAvatar small />}
+                <div className="o01-message-content">
+                  <div className="o01-message-meta">{message.role === "user" ? "DRIVER // YOU" : "O-01 // CO-PILOT"}</div>
+                  <div className="o01-message-bubble">{message.content}</div>
+                </div>
               </div>
             ))}
             {isTyping && (
               <div className="o01-message assistant">
-                <div className="o01-message-avatar">O-01</div>
-                <div className="o01-message-bubble o01-typing"><span /><span /><span /></div>
+                <RobotAvatar small />
+                <div className="o01-message-content">
+                  <div className="o01-message-meta">O-01 // PROCESSING</div>
+                  <div className="o01-message-bubble o01-typing"><span /><span /><span /></div>
+                </div>
               </div>
             )}
           </section>
 
           <section className="o01-quick-actions">
-            <div className="o01-section-label">PIT COMMANDS</div>
+            <div className="o01-section-label"><span /> PIT COMMANDS <small>SELECT A MISSION</small></div>
             <div className="o01-actions-grid">
               {quickActions.map((action) => (
-                <button type="button" key={action} className="o01-action" onClick={() => void sendMessage(action)} disabled={isTyping}>
-                  <span className="o01-action-icon">›</span>{action}
+                <button type="button" key={action.label} className="o01-action" onClick={() => void sendMessage(action.prompt)} disabled={isTyping}>
+                  <span className="o01-action-icon"><CommandIcon type={action.icon} /></span>
+                  <span>{action.label}</span>
                 </button>
               ))}
             </div>
@@ -182,17 +222,23 @@ export function Copilot() {
 
           <div className="o01-input-area">
             <form className="o01-input-form" onSubmit={handleSubmit}>
-              <span className="o01-input-prefix">RADIO</span>
-              <input ref={inputRef} type="text" value={input} onChange={(event) => setInput(event.target.value)} placeholder="Transmit to O-01..." maxLength={1000} disabled={isTyping} autoComplete="off" />
-              <button className="o01-accelerate" type="submit" disabled={!input.trim() || isTyping} aria-label="Accelerate / send message" title="Accelerate">
-                <AccelerationIcon />
+              <DriverAvatar small />
+              <div className="o01-radio-wrap">
+                <span className="o01-input-prefix">RADIO / TRANSMIT</span>
+                <input ref={inputRef} type="text" value={input} onChange={(event) => setInput(event.target.value)} placeholder="Type your message to O-01..." maxLength={1000} disabled={isTyping} autoComplete="off" />
+              </div>
+              <button className="o01-accelerate" type="submit" disabled={!input.trim() || isTyping} aria-label="Accelerate / send message" title="Accelerate and send">
+                <AccelerationPedalIcon />
+                <span>ACCELERATE</span>
+                <small>SEND</small>
               </button>
             </form>
           </div>
 
           <footer className="o01-chat-footer">
-            <span>O-01 // CO-PILOT LINK</span>
+            <span><i /> O-01 // CO-PILOT LINK</span>
             <button type="button" onClick={openResume}>OPEN DRIVER FILE ↗</button>
+            <em>MORE THAN A CHAT — A JOURNEY TOGETHER.</em>
           </footer>
         </section>
       )}

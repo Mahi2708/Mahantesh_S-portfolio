@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles.css';
 import './components/chat/Copilot.css';
+import './components/sections/LayoutFixes.css';
 
 // Final mobile override: legacy portfolio media rules previously pushed the
 // O-01 panel off-screen on phones. This style is injected after all imported
